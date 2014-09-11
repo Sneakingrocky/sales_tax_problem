@@ -29,5 +29,6 @@ describe ReceiptGenerator do
     it "returns an import duty tax of .75 when passed a price of 15" do
       expect(ReceiptGenerator.new.get_import_duty_tax(4)).to eq(0.2)
     end  
+
   end  
 end
