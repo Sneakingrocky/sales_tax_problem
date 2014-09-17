@@ -14,6 +14,22 @@ describe LineItemParser do
       parser = LineItemParser.new(input)
       expect(parser.get_quantity).to eq(13878)
     end
+  end 
+
+  describe "item_imported?" do
+
+    it "returns true when something is imported" do
+      input = "1 imported box of chocolates at 10.00"
+      parser = LineItemParser.new(input)
+      expect(parser.item_imported?).to eq(true)
+    end
+  
+    it "returns false when something is not imported" do
+      input = "1 bottle of perfume at 18.99"
+      parser = LineItemParser.new(input)
+      expect(parser.item_imported?).to eq(false)
+    end
   end  
+
 end  
 

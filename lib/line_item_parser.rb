@@ -8,4 +8,9 @@ class LineItemParser
     parse_quantity = @input.split(/[^0-9]/)
     parse_quantity[0].to_i
   end
+
+  def item_imported?
+    @input.include? "imported"  
+  end  
+
 end  
