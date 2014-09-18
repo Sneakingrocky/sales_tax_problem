@@ -29,7 +29,19 @@ describe LineItemParser do
       parser = LineItemParser.new(input)
       expect(parser.item_imported?).to eq(false)
     end
-  end  
+  end
 
+  describe "get_price" do
+
+    it "gets the item price" do
+      input = "1 imported box of chocolates at 10.00"
+      parser = LineItemParser.new(input)
+      expect(parser.get_price).to eq(10.00)
+
+      input = "1 book at 12.49"
+      parser = LineItemParser.new(input)
+      expect(parser.get_price).to eq(12.49)
+    end
+  end  
 end  
 
