@@ -1,5 +1,5 @@
 
-class ReceiptGenerator
+class TaxCalculator
   SALES_TAX_RATE = 0.1
   IMPORT_TAX_RATE = 0.05
   attr_reader :price_in_cents
