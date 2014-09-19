@@ -5,8 +5,7 @@ class LineItemParser
   end
 
   def get_quantity
-    parse_quantity = @input.split(/[^0-9]/)
-    parse_quantity[0].to_i
+    @input.split(/[^0-9]/)[0].to_i
   end
 
   def item_imported?
@@ -14,8 +13,7 @@ class LineItemParser
   end
 
   def get_price
-    parse_price = @input.split(/ /)
-    parse_price[-1].to_f
+    @input.split(/ /)[-1].to_f
   end    
 
   def get_product
