@@ -1,4 +1,5 @@
 require './lib/tax_exempt'
+require './lib/line_item'
 
 
 describe TaxExempt do
@@ -19,7 +20,7 @@ describe TaxExempt do
     end
 
     it "returns true if item is medicine" do
-      expect(TaxExempt.item_exempt?("headache pills")).to eq (true) 
+      expect(TaxExempt.item_exempt?("packet of headache pills")).to eq (true) 
     end
   end
 end
