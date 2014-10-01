@@ -5,14 +5,12 @@ class LineItemParser
   end
 
   def parse_item
-    line_item = LineItem.new
-
-    line_item.quantity = get_quantity
-    line_item.imported = item_imported?
-    line_item.product = get_product
-    line_item.price_in_cents = get_price_in_cents
-
-    line_item
+    LineItem.new(
+      quantity: get_quantity,
+      imported: item_imported?,
+      product: get_product,
+      price_in_cents: get_price_in_cents
+    )
   end
 
   def get_quantity

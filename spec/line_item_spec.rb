@@ -4,12 +4,7 @@ require './lib/tax_exempt'
 
 describe LineItem do
   let(:line_item) do
-    LineItem.new.tap do |line_item|
-      line_item.quantity = quantity
-      line_item.imported = imported
-      line_item.product = product
-      line_item.price_in_cents = price_in_cents
-    end
+    LineItem.new(quantity: quantity, imported: imported, product: product, price_in_cents: price_in_cents)
   end
   let(:imported) {false}
   let(:product) { "music CD" }
