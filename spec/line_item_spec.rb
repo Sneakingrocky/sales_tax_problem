@@ -93,8 +93,16 @@ describe LineItem do
     end
   end
 
+  describe "imported_string" do
+    let(:imported) {true}
+    let(:product) { "box of chocolates" }
+    let(:quantity) { 1 }
+    let(:price_in_cents) { 10_00 }
 
-
+    it "returns 'imported' if item is imported" do
+      expect(line_item.imported_string).to eq("imported")
+    end  
+  end
 end  
 
 

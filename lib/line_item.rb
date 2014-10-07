@@ -9,30 +9,34 @@ class LineItem
   end
 
   def imported?
-    imported
+    @imported
+  end
+
+  def imported_string
+    if @imported == true
+      return "imported"
+    end
   end
 
   def tax_calculator
-    TaxCalculator.new(price_in_cents)
+    TaxCalculator.new(@price_in_cents)
   end  
 
   def sales_tax_in_cents
-    
     if !TaxExempt.item_exempt?(product)
       tax_calculator.basic_sales_tax_in_cents
     else
       0
     end   
-  end 
+  end
 
-  def import_tax_in_cents 
-
+  def import_tax_in_cents
     if imported?
       tax_calculator.import_duty_tax_in_cents
     else
       0
-    end    
-  end  
+    end
+  end
 
   def total_tax_in_cents   
     total_tax_in_cents = sales_tax_in_cents + import_tax_in_cents
@@ -41,5 +45,5 @@ class LineItem
 
   def total_in_cents
     price_in_cents + total_tax_in_cents
-  end  
+  end
 end  
