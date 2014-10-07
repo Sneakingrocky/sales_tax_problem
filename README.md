@@ -86,8 +86,18 @@ Write an application that prints out the receipt details for these shopping bask
 </blockquote>
 
 
-<h3>Currently working hard to solve this problem!</h3>
+<h3>How to run the this program</h3>
 
-![alt tag](http://www.techranger.org/wp-content/uploads/2014/08/typing-fast1.gif)
+<ol class="directions">
+<li>clone the repository</li>
+<code>$ git clone git@github.com:sneakingrocky/sales_tax_problem.git</code>
+
+<li>cd into the directory</li>
+<code>$ cd SalesTaxProblem</code>
+<li>* You can choose to run itemlist1.txt, itemlist2.tst, or itemlist3.txt *</li>
+<code>$ ruby run.rb spec/itemlist3.txt</code>
+</ol>
+
+
 
 
